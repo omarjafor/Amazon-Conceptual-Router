@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
-const Product = ({product}) => {
-    const { id, images, price, title } = product || {};
-
+const ProductDetails = () => {
+    const productDetails = useLoaderData();
+    const { thumbnail, price, title } = productDetails || {};
     return (
-        <div>
+        <div className="flex h-screen justify-center items-center">
             <div className="w-full h-96 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <img
-                    className="p-4 rounded-lg h-60 w-full"
-                    src={images[0]}
+                    className="p-8 rounded-t-lg h-52 w-full"
+                    src={thumbnail}
                     alt="product image"
                 />
 
@@ -70,19 +70,12 @@ const Product = ({product}) => {
                     </div>
                     <div className="flex items-center justify-between">
                         <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                            ${price}
+                            {price}
                         </span>
-                        <Link to={`/productdetails/${id}`} state={title}>
-                            <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                View Details
-                            </button>
-                        </Link>
-                        {/* <button
-              onClick={handleSingleItemNavigate}
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              View Details
-            </button> */}
+
+                        <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Add to cart
+                        </button>
                     </div>
                 </div>
             </div>
@@ -90,4 +83,4 @@ const Product = ({product}) => {
     );
 };
 
-export default Product;
+export default ProductDetails;

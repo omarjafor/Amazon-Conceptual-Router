@@ -3,6 +3,7 @@ import Mainlayout from '../layout/mainlayout'
 import Home from '../Pages/Home/Home'
 import Products from '../Products/Products'
 import '../App.css'
+import ProductDetails from '../Products/ProductDetails'
 
 const myCreateRoute = createBrowserRouter([
     {
@@ -17,6 +18,11 @@ const myCreateRoute = createBrowserRouter([
                 path: '/products',
                 element: <Products></Products>,
                 loader: () => fetch('https://dummyjson.com/products')
+            },
+            {
+                path: '/productdetails/:id',
+                element: <ProductDetails></ProductDetails>,
+                loader: ({ params }) => fetch(`https://dummyjson.com/products/${params.id}`)
             },
             {
                 path: '/dashboard',
