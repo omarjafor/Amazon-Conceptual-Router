@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import App from './App'
+import Mainlayout from './layout/mainlayout'
 
 // const myCreateRoute = createBrowserRouter([
 //   {
@@ -22,11 +23,7 @@ import App from './App'
 const myCreateRoute = createBrowserRouter([
   {
     path: '/',
-    element: <section>
-      <div>This is header sections</div>
-      <Outlet></Outlet>
-      <div>Footer section here</div>
-    </section>,
+    element: <Mainlayout></Mainlayout>,
     children: [
       {
         path: '/',
