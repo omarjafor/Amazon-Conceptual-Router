@@ -2,12 +2,13 @@ import { useLoaderData } from "react-router-dom";
 
 const ProductDetails = () => {
     const productDetails = useLoaderData();
-    const { thumbnail, price, title } = productDetails || {};
+    console.log(productDetails);
+    const { thumbnail, price, title, description, stock } = productDetails || {};
     return (
         <div className="flex h-screen justify-center items-center">
-            <div className="w-full h-96 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className="w-full h-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <img
-                    className="p-8 rounded-t-lg h-52 w-full"
+                    className="p-2 rounded-t-lg h-60 w-full"
                     src={thumbnail}
                     alt="product image"
                 />
@@ -17,6 +18,8 @@ const ProductDetails = () => {
                         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                             {title}
                         </h5>
+                        <p className="text-white"> {description} </p>
+                        <p className="text-white font-semibold"> Stock: {stock} </p>
                     </a>
                     <div className="flex items-center mt-2.5 mb-5">
                         <svg
@@ -70,7 +73,7 @@ const ProductDetails = () => {
                     </div>
                     <div className="flex items-center justify-between">
                         <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                            {price}
+                            ${price}
                         </span>
 
                         <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
