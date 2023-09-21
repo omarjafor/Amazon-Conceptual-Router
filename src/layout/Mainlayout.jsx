@@ -19,7 +19,9 @@ const Mainlayout = () => {
                         </li>
                     </ul>
                 </nav>
-                <Outlet></Outlet>
+                <div className="min-h-screen">
+                    <Outlet></Outlet>
+                </div>
                 <Footer></Footer>
             </section>
         </div>

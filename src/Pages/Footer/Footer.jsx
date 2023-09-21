@@ -8,7 +8,7 @@ const Footer = () => {
                         <a href="https://flowbite.com/" className="hover:underline">
                             Amazoon
                         </a>
-                          All Rights Reserved by OmarJafor.
+                        . All Rights Reserved by OmarJafor.
                     </span>
                     <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-black sm:mt-0">
                         <li>
