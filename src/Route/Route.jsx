@@ -1,0 +1,24 @@
+import { createBrowserRouter } from 'react-router-dom'
+import Mainlayout from '../layout/mainlayout'
+import Home from '../Pages/Home/Home'
+import Products from '../Products/Products'
+import '../App.css'
+
+const myCreateRoute = createBrowserRouter([
+    {
+        path: '/',
+        element: <Mainlayout></Mainlayout>,
+        children: [
+            {
+                path: '/',
+                element: <Home></Home>
+            },
+            {
+                path: '/products',
+                element: <Products></Products>
+            }
+        ]
+    }
+])
+
+export default myCreateRoute;

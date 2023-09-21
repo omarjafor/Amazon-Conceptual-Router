@@ -4,7 +4,19 @@ const Mainlayout = () => {
     return (
         <div>
             <section>
-                <div className="py-5 shadow-lg">Nav</div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="http://"></a>
+                        </li>
+                        <li>
+                            <a href="http://"></a>
+                        </li>
+                        <li>
+                            <a href="http://"></a>
+                        </li>
+                    </ul>
+                </nav>
                 <Outlet></Outlet>
                 <div>Footer section here</div>
             </section>
